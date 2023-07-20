@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.layouts.index');
+    return view('admin.index', [
+        'title' => 'Test'
+    ]);
 });
