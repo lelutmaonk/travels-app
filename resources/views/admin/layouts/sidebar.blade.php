@@ -13,8 +13,8 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
+        <a class="nav-link" href="/">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -28,19 +28,19 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ request()->is('admin/master-paket/*') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>Master Paket</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">Paket</a>
-                <a class="collapse-item" href="">Kategori</a>
-                <a class="collapse-item" href="">Jadwal</a>
-                <a class="collapse-item" href="">Jadwal Detail</a>
-                <a class="collapse-item" href="">Includes</a>
-                <a class="collapse-item" href="">Ketentuan</a>
+                <a class="collapse-item" href="/admin/master-paket/paket/">Paket</a>
+                <a class="collapse-item" href="/admin/master-paket/kategori/">Kategori</a>
+                <a class="collapse-item" href="/admin/master-paket/jadwal/">Jadwal</a>
+                <a class="collapse-item" href="/admin/master-paket/jadwal-detail/">Jadwal Detail</a>
+                <a class="collapse-item" href="/admin/master-paket/includes/">Includes</a>
+                <a class="collapse-item" href="/admin/master-paket/ketentuan/">Ketentuan</a>
             </div>
         </div>
     </li>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,5 @@ Route::get('/', function () {
         'title' => 'Test'
     ]);
 });
+
+Route::resource('/admin/master-paket/kategori', KategoriController::class);
