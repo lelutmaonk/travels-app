@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PaketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/admin/master-paket/kategori', KategoriController::class);
+Route::resource('/admin/master-paket/paket', PaketController::class);
