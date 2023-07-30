@@ -27,6 +27,7 @@
                             <th scope="col">Kategori</th>
                             <th scope="col">Harga</th>
                             <th scope="col">Gambar</th>
+                            <th scope="col">Ketentuan</th>
                             <th scope="col">Aksi</th>
                           </tr>
                         </thead>
@@ -41,6 +42,7 @@
                                 <img src="{{ asset('storage/' . $d->gambar) }}" alt="" width="50px" height="50px">
                                </center>
                               </td>
+                              <td><a href="/admin/master-paket/ketentuan/{{ $d->id }}" class="btn btn-sm btn-success">Ketentuan</a></td>
                               <td>
                                   <a href="/admin/master-paket/paket/{{ $d->id }}/edit" class="btn btn-sm btn-primary">Ubah</a>
                                   <a href="/admin/master-paket/paket/{{ $d->id }}" class="btn btn-sm btn-success">Lihat</a>

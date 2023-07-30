@@ -45,6 +45,54 @@
               </div>
             </div>   
           </div>
+
+          {{-- ketentuan --}}
+          {{-- <div class="row">
+            <div class="col-sm-12">
+  
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col" class="bg-success text-white">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            
+            </div>
+          </div> --}}
+          {{-- ketentuan --}}
+
+          {{-- Kententuan --}}
+          @if ($data->ketentuan->isNotEmpty())
+              <div class="col-sm-12 mt-5">
+                <div class="title-box-d">
+                  <h3 class="title-d">Ketentuan</h3>
+                </div>
+              </div>
+              <div class="property-description">
+                @foreach ($data->ketentuan as $ketentuan)
+                  <p class="description color-text-a">
+                    {{ $ketentuan->keterangan }}
+                  </p>
+                @endforeach
+              </div>
+          @else
+
+          @endif
+          {{-- End Ketentuan --}}
+
         </div>
       </section><!-- End Agent Single -->
 

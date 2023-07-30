@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KetentuanController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\UserHomeController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/admin/master-paket/kategori', KategoriController::class);
 Route::resource('/admin/master-paket/paket', PaketController::class);
+// Route::resource('/admin/master-paket/ketentuan', KetentuanController::class);
+
+Route::get('/admin/master-paket/ketentuan/{paket:id}', [KetentuanController::class, 'index']);
+Route::get('/admin/master-paket/ketentuan/create/{paket:id}', [KetentuanController::class, 'create']);
+Route::post('/admin/master-paket/ketentuan', [KetentuanController::class, 'store']);
 
 // USER
 Route::get('/', [UserHomeController::class, 'index']);

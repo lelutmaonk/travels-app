@@ -16,4 +16,9 @@ class Paket extends Model
         return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
     }
 
+    public function ketentuan()
+    {
+        return $this->hasMany(Ketentuan::class, 'pakets_id', 'id');
+    }
+
 }
