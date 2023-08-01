@@ -11,8 +11,8 @@
                 <!-- Card Body -->
                 <div class="card-body">
 
-                    <a href="/admin/master-paket/paket" class="btn btn-sm btn-danger mb-3">Kembali</a>
-                    <a href="/admin/master-paket/jadwal/create/{{ $paket->id }}" class="btn btn-sm btn-success mb-3">Tambah Ketentuan</a>
+                    <a href="/admin/master-paket/jadwal/{{ $jadwal->id }}" class="btn btn-sm btn-danger mb-3">Kembali</a>
+                    <a href="/admin/master-paket/jadwal-detail/create/{{ $jadwal->id }}" class="btn btn-sm btn-success mb-3">Tambah Detail Jadwal</a>
                     
 
                     @if (session('message'))
@@ -24,16 +24,21 @@
                     <table class="table table-bordered">
                         <thead>
                           <tr>
-                            <th scope="col">Jadwal</th>
+                            <th scope="col">Nama Paket</th>
+                            <th scope="col">Nama Jadwal</th>
+                            <th scope="col">Waktu</th>
+                            <th scope="col">Aktivitas</th>
                             <th scope="col">Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($jadwals as $j)
+                          @foreach ($jadwalDetail as $detail)
                               <tr>
-                                <td>{{ $j->jadwal_nama }}</td>
+                                <td>{{ $detail->jadwal?->paket?->nama_paket }}</td>
+                                <td>{{ $detail->jadwal?->jadwal_nama }}</td>
+                                <td>{{ $detail->waktu }}</td>
+                                <td>{{ $detail->aktivitas }}</td>
                                 <td>
-                                    <a href="/admin/master-paket/jadwal-detail/{{ $j->id }}" class="btn btn-sm btn-warning">Jadwal Detail</a>
                                     <a href="" class="btn btn-sm btn-danger">Hapus</a>
                                 </td>
                               </tr>

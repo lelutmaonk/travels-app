@@ -15,4 +15,10 @@ class Jadwal extends Model
     {
         return $this->belongsTo(Paket::class, 'pakets_id', 'id');
     }
+
+    public function detail()
+    {
+        return $this->hasMany(JadwalDetail::class, 'jadwals_id', 'id');
+    }
+
 }
