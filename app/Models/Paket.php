@@ -21,4 +21,9 @@ class Paket extends Model
         return $this->hasMany(Ketentuan::class, 'pakets_id', 'id');
     }
 
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class, 'pakets_id', 'id');
+    }
+
 }

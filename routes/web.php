@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KetentuanController;
 use App\Http\Controllers\PaketController;
@@ -27,9 +28,14 @@ Route::resource('/admin/master-paket/kategori', KategoriController::class);
 Route::resource('/admin/master-paket/paket', PaketController::class);
 // Route::resource('/admin/master-paket/ketentuan', KetentuanController::class);
 
+// KETENTUAN
 Route::get('/admin/master-paket/ketentuan/{paket:id}', [KetentuanController::class, 'index']);
 Route::get('/admin/master-paket/ketentuan/create/{paket:id}', [KetentuanController::class, 'create']);
 Route::post('/admin/master-paket/ketentuan', [KetentuanController::class, 'store']);
+// JADWAL
+Route::get('/admin/master-paket/jadwal/{paket:id}', [JadwalController::class, 'index']);
+Route::get('/admin/master-paket/jadwal/create/{paket:id}', [JadwalController::class, 'create']);
+Route::post('/admin/master-paket/jadwal', [JadwalController::class, 'store']);
 
 // USER
 Route::get('/', [UserHomeController::class, 'index']);
